@@ -1,9 +1,8 @@
 import React from "react";
-import { Layout, Menu, Input, Button, Select, Space, Avatar } from "antd";
-import { SearchOutlined, PhoneOutlined, UserOutlined } from "@ant-design/icons";
+import { Layout, Menu, Button, Avatar, Space } from "antd";
+import { PhoneOutlined, UserOutlined } from "@ant-design/icons";
 
 const { Header } = Layout;
-const { Option } = Select;
 
 const AppHeader = () => {
   const menuItems = [
@@ -22,17 +21,22 @@ const AppHeader = () => {
       style={{
         background: "#fff",
         height: 80,
-        boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         padding: "0 40px",
+        position: "sticky",
+        top: 0,
+        zIndex: 1000,
+        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)", // stronger visible shadow
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+      {/* Left: Logo or Text */}
+      <div style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: "bold", fontSize: 18 }}>
         this is my new app
       </div>
 
+      {/* Center: Menu */}
       <Menu
         mode="horizontal"
         items={menuItems}
@@ -45,9 +49,29 @@ const AppHeader = () => {
         }}
       />
 
-      <Button icon={<PhoneOutlined />} shape="circle" />
-      <Button type="primary">Login</Button>
-      <Avatar icon={<UserOutlined />} style={{ backgroundColor: "#1890ff" }} />
+      {/* Right: Action Buttons */}
+      <Space size="middle" align="center">
+        <Button
+          icon={<PhoneOutlined />}
+          shape="circle"
+          size="large"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            borderColor: "#1890ff",
+            color: "#1890ff",
+          }}
+        />
+        <Button type="primary" size="large">
+          Login
+        </Button>
+        <Avatar
+          icon={<UserOutlined />}
+          size="large"
+          style={{ backgroundColor: "#1890ff" }}
+        />
+      </Space>
     </Header>
   );
 };
