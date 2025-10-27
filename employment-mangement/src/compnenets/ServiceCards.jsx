@@ -7,19 +7,19 @@ const services = [
   {
     title: "Video Consultation",
     subtitle: "PMC Verified Doctors",
-    image: "https://www.marham.pk/_next/image?url=%2Fassets%2Fvideo-consultation.png&w=1920&q=75",
+ 
     bg: "#E8F4FB",
   },
   {
     title: "In-clinic Visit",
     subtitle: "Book Appointment",
-    image: "https://www.marham.pk/_next/image?url=%2Fassets%2Fin-clinic.png&w=1920&q=75",
+    
     bg: "#FCEFE6",
   },
   {
     title: "Weight Loss Clinic",
     subtitle: "Healthy Lifestyle",
-    image: "https://www.marham.pk/_next/image?url=%2Fassets%2Fweight-loss.png&w=1920&q=75",
+ 
     bg: "#FEF7E6",
   },
 ];
