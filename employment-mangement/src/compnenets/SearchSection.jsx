@@ -15,7 +15,7 @@ const SearchSection = () => {
         <Title level={4}>Find the Best Doctor Near You</Title>
 
         <Space style={{ width: "100%" }}>
-          <Select defaultValue="Lahore" style={{ width: 180 }}>
+          <Select defaultValue="Lahore" style={{ width: 180,height:50 }}>
             <Option value="Lahore">Lahore</Option>
             <Option value="Karachi">Karachi</Option>
             <Option value="Islamabad">Islamabad</Option>
@@ -24,7 +24,7 @@ const SearchSection = () => {
           <Input
             placeholder="Search by Doctors"
             prefix={<SearchOutlined />}
-            style={{ width: "50%", borderRadius: 6 }}
+            style={{ width: 1000, borderRadius: 6 ,height:50 }}
           />
         </Space>
       </Space>
