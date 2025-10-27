@@ -4,6 +4,7 @@ import AppHeader from "./AppHeader";
 import SearchSection from "./SearchSection";
 import ServiceCards from "./ServiceCards";
 import AdviceSection from "./AdviceSection";
+import Neardoctor from "./Neardoctor";
 
 const { Content } = Layout;
 
@@ -15,6 +16,7 @@ const AppLayout = () => {
         <SearchSection />
         <ServiceCards />
         <AdviceSection />
+        <Neardoctor/>
       </Content>
     </Layout>
   );
