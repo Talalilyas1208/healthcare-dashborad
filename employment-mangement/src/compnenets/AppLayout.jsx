@@ -5,7 +5,8 @@ import SearchSection from "./SearchSection";
 import ServiceCards from "./ServiceCards";
 import AdviceSection from "./AdviceSection";
 import Neardoctor from "./Neardoctor";
-
+import SymptomsSection from "./SymptomsSection";
+import UserReviewsSection from "./UserReviewsSection";
 const { Content } = Layout;
 
 const AppLayout = () => {
@@ -16,7 +17,9 @@ const AppLayout = () => {
         <SearchSection />
         <ServiceCards />
         <AdviceSection />
-        <Neardoctor/>
+        <Neardoctor />
+        <SymptomsSection />
+        <UserReviewsSection />
       </Content>
     </Layout>
   );
