@@ -28,15 +28,15 @@ const AppHeader = () => {
         position: "sticky",
         top: 0,
         zIndex: 1000,
-        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)", // stronger visible shadow
+        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
       }}
     >
-      {/* Left: Logo or Text */}
+     
       <div style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: "bold", fontSize: 18 }}>
         this is my new app
       </div>
 
-      {/* Center: Menu */}
+    
       <Menu
         mode="horizontal"
         items={menuItems}
@@ -48,8 +48,6 @@ const AppHeader = () => {
           fontWeight: 500,
         }}
       />
-
-      {/* Right: Action Buttons */}
       <Space size="middle" align="center">
         <Button
           icon={<PhoneOutlined />}
