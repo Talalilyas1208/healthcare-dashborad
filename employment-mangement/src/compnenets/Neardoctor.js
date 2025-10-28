@@ -18,7 +18,7 @@ const doctors = [
     image: "https://randomuser.me/api/portraits/men/45.jpg",
   },
   {
-    name: "Dr. Hamza Ali",
+    name: "Dr. Hamza Ali",  
     specialty: "Child Specialist",
     city: "Islamabad",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
