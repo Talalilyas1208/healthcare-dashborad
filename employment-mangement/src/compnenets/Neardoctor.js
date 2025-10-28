@@ -38,7 +38,6 @@ const doctors = [
 ];
 
 export default function NearDoctor() {
-  // Split doctors into chunks of 3 per slide
   const slides = [];
   for (let i = 0; i < doctors.length; i += 3) {
     slides.push(doctors.slice(i, i + 3));
