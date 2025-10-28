@@ -7,19 +7,19 @@ const services = [
   {
     title: "Video Consultation",
     subtitle: "PMC Verified Doctors",
- 
+
     bg: "#E8F4FB",
   },
   {
     title: "In-clinic Visit",
     subtitle: "Book Appointment",
-    
+
     bg: "#FCEFE6",
   },
   {
     title: "Weight Loss Clinic",
     subtitle: "Healthy Lifestyle",
- 
+
     bg: "#FEF7E6",
   },
 ];
@@ -46,7 +46,11 @@ const ServiceCards = () => {
                 <Title level={5}>{service.title}</Title>
                 <Text>{service.subtitle}</Text>
               </div>
-              <img src={service.image} alt={service.title} style={{ height: 120 }} />
+              <img
+                src={service.image}
+                alt={service.title}
+                style={{ height: 120 }}
+              />
             </Card>
           </Col>
         ))}
