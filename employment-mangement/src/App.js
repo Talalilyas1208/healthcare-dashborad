@@ -1,10 +1,7 @@
-import React from "react";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from "antd";
-import AppHeader from "./compnenets/AppHeader";
 import AppLayout from "./compnenets/AppLayout";
-import UserReviewsSection from "./compnenets/UserReviewsSection";
-import NearHospital from "./compnenets/NearHospital";
 
 const { Content, Footer } = Layout;
 
