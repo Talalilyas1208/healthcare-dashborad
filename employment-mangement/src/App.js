@@ -1,8 +1,6 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from "antd";
 import AppLayout from "./compnenets/AppLayout";
-
 const { Content, Footer } = Layout;
 
 function App() {

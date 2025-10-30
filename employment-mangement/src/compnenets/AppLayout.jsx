@@ -13,7 +13,7 @@ const AppLayout = () => {
   return (
     <Layout>
       <AppHeader />
-      <Content style={{ background: "#fff" }}>
+      <Content >
         <SearchSection />
         <ServiceCards />
         <AdviceSection />
