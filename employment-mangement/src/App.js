@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <Layout>
-        <AppHeader />
+     
         <Content style={{ minHeight: "100vh", background: "#fff" }}>
           <Routes>
             <Route path="/" element={<AppLayout />} />
