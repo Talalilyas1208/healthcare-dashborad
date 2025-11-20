@@ -8,12 +8,11 @@ import Neardoctor from "./Neardoctor";
 import SymptomsSection from "./SymptomsSection";
 import UserReviewsSection from "./UserReviewsSection";
 const { Content } = Layout;
-
 const AppLayout = () => {
   return (
     <Layout>
       <AppHeader />
-      <Content >
+       <Content >
         <SearchSection />
         <ServiceCards />
         <AdviceSection />

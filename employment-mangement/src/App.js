@@ -13,9 +13,6 @@ function App() {
             <Route path="/" element={<AppLayout />} />
           </Routes>
         </Content>
-        <Footer style={{ textAlign: "center" }}>
-          ©2025 Healthcare Portal. All rights reserved.
-        </Footer>
       </Layout>
     </Router>
   );

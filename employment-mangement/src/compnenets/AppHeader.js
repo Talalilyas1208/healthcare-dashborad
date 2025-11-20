@@ -1,6 +1,9 @@
 import React from "react";
-import { Layout, Menu, Button, Avatar, Space } from "antd";
-import { PhoneOutlined, UserOutlined } from "@ant-design/icons";
+import { Layout, Menu, Button, Avatar } from "antd";
+import {
+  PhoneOutlined,
+  UserOutlined
+} from "@ant-design/icons";
 
 const { Header } = Layout;
 
@@ -20,56 +23,72 @@ const AppHeader = () => {
     <Header
       style={{
         background: "#fff",
-        height: 80,
+        height: 70,
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
         padding: "0 40px",
+        borderBottom: "1px solid #eee",
+        boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
         position: "sticky",
         top: 0,
-        zIndex: 1000,
-        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+        zIndex: 100,
       }}
     >
-     
-      <div style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: "bold", fontSize: 18 }}>
-        this is my new app
+      {/* LEFT LOGO */}
+      <div
+        style={{
+          fontSize: "20px",
+          fontWeight: "bold",
+          color: "#0B4DA1",
+          marginRight: 40,
+        }}
+      >
+        My App
       </div>
 
-    
+      {/* CENTER MENU */}
       <Menu
         mode="horizontal"
         items={menuItems}
         style={{
           flex: 1,
-          justifyContent: "center",
           borderBottom: "none",
-          background: "transparent",
-          fontWeight: 500,
+          fontSize: "15px",
         }}
       />
-      <Space size="middle" align="center">
+
+      {/* RIGHT SIDE */}
+      <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        {/* CALL BUTTON */}
         <Button
-          icon={<PhoneOutlined />}
           shape="circle"
+          icon={<PhoneOutlined />}
           size="large"
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            borderColor: "#1890ff",
-            color: "#1890ff",
+            borderColor: "#0B4DA1",
+            color: "#0B4DA1",
           }}
         />
-        <Button type="primary" size="large">
+
+        {/* LOGIN BUTTON */}
+        <Button
+          type="primary"
+          style={{
+            background: "#0B4DA1",
+            padding: "0 20px",
+            height: 40,
+            borderRadius: 8,
+          }}
+        >
           Login
         </Button>
+
         <Avatar
-          icon={<UserOutlined />}
           size="large"
-          style={{ backgroundColor: "#1890ff" }}
+          style={{ background: "#0B4DA1", cursor: "pointer" }}
+          icon={<UserOutlined />}
         />
-      </Space>
+      </div>
     </Header>
   );
 };
