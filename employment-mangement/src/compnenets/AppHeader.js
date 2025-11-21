@@ -1,95 +1,47 @@
-import React from "react";
-import { Layout, Menu, Button, Avatar } from "antd";
-import {
-  PhoneOutlined,
-  UserOutlined
-} from "@ant-design/icons";
+import React, { useState } from "react";
+import { Layout, Menu, Button, Grid, Input, Avatar } from "antd";
+import { MenuOutlined, SearchOutlined, PhoneOutlined, UserOutlined } from "@ant-design/icons";
 
 const { Header } = Layout;
+const { useBreakpoint } = Grid;
 
 const AppHeader = () => {
-  const menuItems = [
-    { key: "1", label: "Find Doctors" },
-    { key: "2", label: "Hospitals" },
-    { key: "3", label: "Surgeries" },
-    { key: "4", label: "Medicines" },
-    { key: "5", label: "Labs" },
-    { key: "6", label: "Health Hub" },
-    { key: "7", label: "Forum" },
-    { key: "8", label: "Join as Doctor" },
-  ];
+  const screens = useBreakpoint();
+  const [menuVisible, setMenuVisible] = useState(false);
 
   return (
-    <Header
-      style={{
-        background: "#fff",
-        height: 70,
-        display: "flex",
-        alignItems: "center",
-        padding: "0 40px",
-        borderBottom: "1px solid #eee",
-        boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
-        position: "sticky",
-        top: 0,
-        zIndex: 100,
-      }}
-    >
-      {/* LEFT LOGO */}
-      <div
-        style={{
-          fontSize: "20px",
-          fontWeight: "bold",
-          color: "#0B4DA1",
-          marginRight: 40,
-        }}
-      >
-        My App
-      </div>
+    <>
+      <Header style={{ padding: '0 20px', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+        {/* Logo */}
+        <div style={{ fontWeight: 'bold', fontSize: '20px', color: '#1890ff' }}>Marham Clone</div>
 
-      {/* CENTER MENU */}
-      <Menu
-        mode="horizontal"
-        items={menuItems}
-        style={{
-          flex: 1,
-          borderBottom: "none",
-          fontSize: "15px",
-        }}
-      />
+        {/* Desktop Menu */}
+        {screens.md ? (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+            <Input placeholder="Search" prefix={<SearchOutlined />} style={{ width: 200 }} />
+            <Button type="primary" icon={<PhoneOutlined />}>Contact</Button>
+            <Avatar icon={<UserOutlined />} />
+          </div>
+        ) : (
+          <Button
+            type="text"
+            icon={<MenuOutlined style={{ fontSize: '20px' }} />}
+            onClick={() => setMenuVisible(!menuVisible)}
+          />
+        )}
+      </Header>
 
-      {/* RIGHT SIDE */}
-      <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-        {/* CALL BUTTON */}
-        <Button
-          shape="circle"
-          icon={<PhoneOutlined />}
-          size="large"
-          style={{
-            borderColor: "#0B4DA1",
-            color: "#0B4DA1",
-          }}
-        />
-
-        {/* LOGIN BUTTON */}
-        <Button
-          type="primary"
-          style={{
-            background: "#0B4DA1",
-            padding: "0 20px",
-            height: 40,
-            borderRadius: 8,
-          }}
-        >
-          Login
-        </Button>
-
-        <Avatar
-          size="large"
-          style={{ background: "#0B4DA1", cursor: "pointer" }}
-          icon={<UserOutlined />}
-        />
-      </div>
-    </Header>
+      {/* Mobile Dropdown Menu */}
+      {!screens.md && menuVisible && (
+        <div style={{ background: '#fff', padding: '10px 20px', borderBottom: '1px solid #f0f0f0' }}>
+          <Menu mode="vertical">
+            <Menu.Item key="1" icon={<SearchOutlined />}>Search</Menu.Item>
+            <Menu.Item key="2" icon={<PhoneOutlined />}>Contact</Menu.Item>
+            <Menu.Item key="3" icon={<UserOutlined />}>Profile</Menu.Item>
+          </Menu>
+        </div>
+      )}
+    </>
   );
 };
 
