@@ -1,5 +1,4 @@
-
-import { Card } from "antd";
+import { Card, Row, Col } from "antd";
 
 const HelpSection = () => {
   const cards = [
@@ -29,56 +28,54 @@ const HelpSection = () => {
         How can we help you today?
       </h2>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "20px",
-          marginTop: "20px",
-        }}
-      >
+      <Row gutter={[20, 20]} style={{ marginTop: 20 }}>
         {cards.map((card, index) => (
-          <Card
+          <Col
             key={index}
-            hoverable
-            style={{
-              background: card.color,
-              borderRadius: 18,
-              height: 150,
-              border: "none",
-              boxShadow: "0 4px 10px rgba(0,0,0,0.06)",
-              display: "flex",
-              alignItems: "center",
-            }}
-            bodyStyle={{
-              display: "flex",
-              alignItems: "center",
-              gap: "20px",
-              padding: "20px",
-            }}
+            xs={24}   
+            sm={12}   
+            md={8}    
           >
-            <img
-              src={card.image}
+            <Card
+              hoverable
               style={{
-                width: 80,
-                height: 80,
-                objectFit: "contain",
-                borderRadius: 12,
+                background: card.color,
+                borderRadius: 18,
+                height: 150,
+                border: "none",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.06)",
+                display: "flex",
+                alignItems: "center",
               }}
-              alt="icon"
-            />
+              bodyStyle={{
+                display: "flex",
+                alignItems: "center",
+                gap: 20,
+                padding: 20,
+              }}
+            >
+              <img
+                src={card.image}
+                alt="icon"
+                style={{
+                  width: 80,
+                  height: 80,
+                  objectFit: "contain",
+                }}
+              />
 
-            <div>
-              <h3 style={{ margin: 0, fontSize: 18, fontWeight: 600 }}>
-                {card.title}
-              </h3>
-              <p style={{ marginTop: 6, color: "#666", fontSize: 14 }}>
-                {card.subtitle}
-              </p>
-            </div>
-          </Card>
+              <div>
+                <h3 style={{ margin: 0, fontSize: 18, fontWeight: 600 }}>
+                  {card.title}
+                </h3>
+                <p style={{ marginTop: 6, color: "#666", fontSize: 14 }}>
+                  {card.subtitle}
+                </p>
+              </div>
+            </Card>
+          </Col>
         ))}
-      </div>
+      </Row>
     </div>
   );
 };
